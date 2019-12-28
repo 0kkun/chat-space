@@ -61,6 +61,7 @@ Things you may want to cover:
 ### Association
 - belong_to :groups
 
+
 * Database initialization
 
 * How to run the test suite
