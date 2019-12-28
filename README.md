@@ -11,6 +11,7 @@ Things you may want to cover:
 
 * Configuration
 
+------------------------------------------------------
 * Database creation
 
 ## usersテーブル
@@ -30,7 +31,6 @@ Things you may want to cover:
 |image|string||
 |user_id|integer|null: false|
 |group_id|integer|null: false|
-|timestamps|||
 ### Association
 - belog_to :users
 - belong_to :group_messages
@@ -61,6 +61,7 @@ Things you may want to cover:
 ### Association
 - belong_to :groups
 
+------------------------------------------------------
 
 * Database initialization
 
