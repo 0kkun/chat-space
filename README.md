@@ -17,12 +17,12 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
 - has_many :massages
-- has_many :groups
+- has_many :groups, through: :group_users
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -33,33 +33,25 @@ Things you may want to cover:
 |group_id|integer|null: false|
 ### Association
 - belog_to :users
-- belong_to :group_messages
+- belong_to :groups
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|text|null: false|
-|timestamps|||
+|user_id|integer|null: false|
 ### Association
-- belog_to :users
-- has_many :group_messages
-- has_many :members
+- has_many :users, through: :group_users
+- has_many :messages
 
-## group_messagesテーブル
+## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message_id|integer|null: false|
-|group_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 ### Association
-- belog_to :messages
-- belong_to :groups
-
-## membersテーブル
-|Column|Type|Options|
-|------|----|-------|
-|member_name|text|null: false|
-### Association
-- belong_to :groups
+- belongs_to :group
+- belongs_to :user
 
 ------------------------------------------------------
 
