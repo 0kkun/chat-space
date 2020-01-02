@@ -1,3 +1,29 @@
 .side-bar
-  .side-bar__user-name
+  .side-bar__top
+    .side-bar__top__items
+      .side-bar__top__items__name
+        okkun
+      .side-bar__top__items__icons
+        = link_to "#", class: "side-bar__top__items__icons--edit-btn" do
+          %i.fas.fa-edit
+        = link_to "#", class: "side-bar__top__items__icons--cog-btn" do
+          %i.fa.fa-cog
+
   .side-bar__group-list
+    .side-bar__group-list__group
+      -# = link_to ""
+      .side-bar__group-list__group__group-name
+        techcamp
+      .side-bar__group-list__group__latest-message
+        まだメッセージがありません
+      
+    .side-bar__group-list__group
+      .side-bar__group-list__group__group-name
+        techcamp
+      .side-bar__group-list__group__latest-message
+        まだメッセージがありません
+
+
+-# 下記の記述方式で書きたかったが、なぜかeditとcongは表示できなかった。なぜだ？
+-#   = link_to "#", class: "edit__btn" do
+-#         = icon('fas', 'fa-edit')
