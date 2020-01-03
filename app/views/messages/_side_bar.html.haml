@@ -3,11 +3,13 @@
     .side-bar__top__items
       .side-bar__top__items__name
         okkun
-      .side-bar__top__items__icons
-        = link_to "#", class: "side-bar__top__items__icons--edit-btn" do
-          %i.fas.fa-edit
-        = link_to "#", class: "side-bar__top__items__icons--cog-btn" do
-          %i.fa.fa-cog
+      %ul.side-bar__top__items__icons
+        %li.side-bar__top__items__icons__edit-btn
+          = link_to "#", class: "side-bar__top__items__icons__edit-btn__btn" do
+            = icon('fa', 'edit')
+        %li.side-bar__top__items__icons__cog-btn
+          = link_to "#", class: "side-bar__top__items__icons__cog-btn__btn" do
+            = icon('fa', 'cog')
 
   .side-bar__group-list
     .side-bar__group-list__group
@@ -26,4 +28,5 @@
 
 -# 下記の記述方式で書きたかったが、なぜかeditとcongは表示できなかった。なぜだ？
 -#   = link_to "#", class: "edit__btn" do
--#         = icon('fas', 'fa-edit')
+-#     = icon('fas', 'fa-edit')
+          -# %i.fas.fa-edit
