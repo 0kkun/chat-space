@@ -1,0 +1,5 @@
+//フラッシュメッセージの表示
+//deviseにはflashというクラスにkey value形式でメッセージが格納されている
+.notification
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key
