@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   #登録情報を編集するためのルーティングを定義
   resources :users, only: [:edit, :update]
-
+  resources :groups, only: [:new, :create, :edit, :update]
 end
