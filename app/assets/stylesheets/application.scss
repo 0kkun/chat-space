@@ -1,4 +1,7 @@
 @import "./reset";
+// colors.scssとflash.scssをインポート
+@import "config/colors";
+@import "modules/flash";
 @import "font-awesome-sprockets";
 @import "./font-awesome";
 @import "./messages";
