@@ -12,14 +12,10 @@
             = icon('fa', 'cog')
 
   .side-bar__group-list
-    .side-bar__group-list__group
-      .side-bar__group-list__group__group-name
-        techcamp
-      .side-bar__group-list__group__latest-message
-        まだメッセージがありません
-      
-    .side-bar__group-list__group
-      .side-bar__group-list__group__group-name
-        techcamp
-      .side-bar__group-list__group__latest-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
