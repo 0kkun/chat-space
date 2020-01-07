@@ -29,6 +29,7 @@ class GroupsController < ApplicationController
     end
   end
 
+
   #グループの内容を更新する時のアクション
   #インスタンス変数groupのupdateアクションに成功したら、ルートのビューを表示し、
   #通知メッセを表示する。失敗したら再度editビューを表示する。

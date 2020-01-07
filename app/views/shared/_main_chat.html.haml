@@ -28,9 +28,18 @@
         こんばんは
 
   .form
-    %form.input-form
-      %input{type:"text", class:"input-form__text", placeholder:"type a message"}
-      %label{class:"input-form__image"}
-        = icon('fas','image')
-      %input{type:"file", class:"input-form__image__file"}
-      %input{type:"submit", class:"submit-btn", value:"Send"}
+    = form_for [@group, @message] do |f|
+      .input-form
+        = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-form__image' do
+          = icon('fas', 'image')
+          = f.file_field :image, class: 'input-form__image__file'
+        = f.submit 'Send', class: 'submit-btn'
+
+    -# %form.input-form
+    -#   %input{type:"text", class:"input-form__text", placeholder:"type a message"}
+    -#   %label{class:"input-form__image"}
+    -#     = icon('fas','image')
+    -#   %input{type:"file", class:"input-form__image__file"}
+    -#   %input{type:"submit", class:"submit-btn", value:"Send"}
+    
