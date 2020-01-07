@@ -28,7 +28,7 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
+|content|string||
 |image|string||
 |user_id|integer|null: false|
 |group_id|integer|null: false|
