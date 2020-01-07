@@ -1,0 +1,111 @@
+.chat-main {
+  width            : calc(100vw - 300px);
+  height           : 100%;
+  background-color : #fafafa;
+  position         : relative;
+  &__group-info {
+    background-color : #ffffff;
+    width            : 100%;
+    height           :100px;
+    border           : 1px solid #eeeeee;
+    display          : flex;
+    justify-content  : space-between;
+    &__left-box {
+      height       : 100%;
+      padding-left : 40px;
+      &__name {
+        padding-top : 35px;
+        font-size   : 20px;
+        color       : #333333;
+      }
+      &__member {
+        padding-top : 15px;
+        font-size   : 12px;
+        color       : #999999;
+      }
+    }
+    &__edit {
+      font-size       : 16px;
+      color           : #38aef0;
+      text-align      : center;
+      height          : 40px;
+      width           : 72px;
+      padding         : 11px 20px 0 20px;
+      margin          : 28px 40px 0 0; //上右下左
+      border          : 1px solid;
+      text-decoration : none;
+      &__edit-btn {
+      color           : #38aef0;
+      text-decoration : none;
+      }
+    }
+  }
+  &__messages{
+    height : calc(100% - 190px);
+    width  : 100%;
+    &__message {
+      padding : 46px 0 0 40px; //上右下左
+      &__upper-info {
+        display : flex;
+        &__talker {
+          font-size     : 16px;
+          font-weight   : bold;
+          color         : #333333;
+          margin-bottom : 10px;
+        }
+        &__post-time {
+          font-size   : 12px;
+          margin-left : 10px;
+          height      : 12px;
+          color       : #999999;
+        }
+      }
+      &__post-message {
+        color         : #434a54;
+        font-size     : 14px;
+        margin-bottom : 10px;
+      }
+    }
+  }
+  &__form {
+    background-color : #ddd;
+    width            : 100%;
+    height           : 90px;
+    &__input-form {
+      display: flex;
+      padding : 20px 40px;
+      &__input-box {
+        width: 100%;
+        display: flex;
+        position: relative;
+        &__text {
+          height  : 50px;
+          width   : 100%;
+          padding : 0 40px 0 10px; //上右下左
+          color   : #434a54;
+        &__image {
+          font-size : 1.3rem;
+          cursor    : pointer ;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+
+          &__file {
+            text-decoration: none;
+            display: none;
+          }
+          }
+        }
+      }
+      &__submit-btn {
+          height           : 50px;
+          width            : 100px;
+          color            : white;
+          padding          : 0 30px;
+          margin-left      : 15px;
+          background-color : #38aef0;
+          cursor           : pointer;
+      }
+    }
+  }
+}

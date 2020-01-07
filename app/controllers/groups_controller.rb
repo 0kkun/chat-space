@@ -29,11 +29,9 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   #グループの内容を更新する時のアクション
-  #
+  #インスタンス変数groupのupdateアクションに成功したら、ルートのビューを表示し、
+  #通知メッセを表示する。失敗したら再度editビューを表示する。
   def update
     if @group.update(group_params)
       redirect_to root_path, notice: 'グループを更新しました'
