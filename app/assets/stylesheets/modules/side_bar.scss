@@ -1,0 +1,61 @@
+.side-bar {
+  width  : 300px;
+  height : 100%;
+  background-color: #253141;
+  &__top {
+    height          : 100px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    &__items {
+      width            : calc(100% - 40px);
+      height           : 20px;
+      background-color : #253141;
+      display          : flex;
+      justify-content  : space-between;
+      &__name {
+        font-size   : $side_top_font;
+        font-weight : bold;
+        text-align  : center;
+        color       : #ffffff;
+      }
+      &__icons {
+        width      : 40px;
+        display: flex;
+        justify-content: space-between;
+        &__edit-btn {
+          &__btn {
+            color           : #ffffff;
+            text-decoration : none;
+            margin-left     : 0.3rem;
+          }
+        }
+        &__cog-btn {
+          &__btn {
+            color           : #ffffff;
+            text-decoration : none;
+            margin-left     : 0.3rem;
+          }
+        }
+      }
+    }
+  }
+  &__group-list {
+    height           : calc(100vh - 100px);
+    background-color : #2f3e51;
+    padding          : 20px 20px 0 20px; //上右下左
+    &__group {
+      width         : 100%;
+      margin-bottom : 40px;
+      &__group-name {
+        font-size     : $side_group_name;
+        color         : #ffffff;
+        margin-bottom : 5px;
+      }
+      &__latest-message {
+        font-size : $side_group_message;
+        color     : #ffffff;
+      }
+    }
+  }
+}
