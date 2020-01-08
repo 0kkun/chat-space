@@ -1,38 +1,16 @@
 .chat-main
-  .chat-main__group-info
-    .chat-main__group-info__left-box
-      .chat-main__group-info__left-box__name
-        test group1
-      .chat-main__group-info__left-box__member
-        Member :
-    .chat-main__group-info__edit
-      = link_to 'Edit', "#", class: "chat-main__group-info__edit__edit-btn"
 
-  .chat-main__messages
-    .chat-main__messages__message
-      .chat-main__messages__message__upper-info
-        .chat-main__messages__message__upper-info__talker
-          okkun
-        .chat-main__messages__message__upper-info__post-time
-          2020/01/01(Thu) 12:00:00
-      .chat-main__messages__message__post-message
-        おはよう
+  .main-header
+    = render partial: 'messages/main-header', locals: { group: @group }
+ 
+  .messages
+    = render @messages
 
-    .chat-main__messages__message
-      .chat-main__messages__message__upper-info
-        .chat-main__messages__message__upper-info__talker
-          okkun
-        .chat-main__messages__message__upper-info__post-time
-          2020/01/01(Thu) 12:00:00
-      .chat-main__messages__message__post-message
-        こんばんは
-
-  .chat-main__form
-    %form.chat-main__form__input-form
-      .chat-main__form__input-form__input-box
-        %input{type:"text", class:"chat-main__form__input-form__input-box__text", placeholder:"type a message"}
-        %label{class:"chat-main__form__input-form__input-box__text__image"}
-          = icon('fas','image')
-          %input{type:"file", class:"chat-main__form__input-form__input-box__text__image__file"}
-      %input{type:"submit", class:"chat-main__form__input-form__submit-btn", value:"Send"}
-
+  .form
+    = form_for [@group, @message] do |f|
+      .input-form
+        = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-form__image' do
+          = icon('fas', 'image')
+          = f.file_field :image, class: 'input-form__image__file'
+        = f.submit 'Send', class: 'submit-btn'

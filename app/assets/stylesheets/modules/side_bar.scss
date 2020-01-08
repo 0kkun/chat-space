@@ -44,15 +44,17 @@
     height           : calc(100vh - 100px);
     background-color : #2f3e51;
     padding          : 20px 20px 0 20px; //上右下左
-    &__group {
+    .group {
       width         : 100%;
       margin-bottom : 40px;
-      &__group-name {
+      box-sizing: border-box;
+      
+      &__name {
         font-size     : $side_group_name;
         color         : #ffffff;
         margin-bottom : 5px;
       }
-      &__latest-message {
+      &__message {
         font-size : $side_group_message;
         color     : #ffffff;
       }

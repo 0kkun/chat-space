@@ -3,16 +3,17 @@
   height           : 100%;
   background-color : #fafafa;
   position         : relative;
-  &__group-info {
+  .main-header {
     background-color : #ffffff;
     width            : 100%;
     height           :100px;
     border           : 1px solid #eeeeee;
     display          : flex;
     justify-content  : space-between;
+    padding: 0 40px;
     &__left-box {
       height       : 100%;
-      padding-left : 40px;
+      // padding-left : 40px;
       &__name {
         padding-top : 35px;
         font-size   : 20px;
@@ -30,8 +31,8 @@
       text-align      : center;
       height          : 40px;
       width           : 72px;
-      padding         : 11px 20px 0 20px;
-      margin          : 28px 40px 0 0; //上右下左
+      padding         : 11px 0 0 0px; //上右下左
+      margin          : 28px 0px 0 0; //上右下左
       border          : 1px solid;
       text-decoration : none;
       &__edit-btn {
@@ -40,17 +41,20 @@
       }
     }
   }
-  &__messages{
+  .messages{
     height : calc(100% - 190px);
     width  : 100%;
-    &__message {
-      padding : 46px 0 0 40px; //上右下左
-      &__upper-info {
+    padding : 46px 40px; //上右下左
+    background-color: #fafafa;
+    .message {
+      margin: 0;
+      padding: 0;
+      .upper-info {
         display : flex;
         &__talker {
           font-size     : 16px;
           font-weight   : bold;
-          color         : #333333;
+          color         : #434a54;
           margin-bottom : 10px;
         }
         &__post-time {
@@ -60,52 +64,88 @@
           color       : #999999;
         }
       }
-      &__post-message {
+      .post-message {
+        margin-top: 10px;
+        &__content {
         color         : #434a54;
         font-size     : 14px;
-        margin-bottom : 10px;
+        margin-bottom : 40px;
+        }
       }
     }
   }
-  &__form {
+
+  .form {
+    width: 100%;
     background-color : #ddd;
     width            : 100%;
     height           : 90px;
-    &__input-form {
+    padding          : 20px 40px;
+    .input-form {
       display: flex;
-      padding : 20px 40px;
-      &__input-box {
-        width: 100%;
-        display: flex;
-        position: relative;
-        &__text {
-          height  : 50px;
-          width   : 100%;
-          padding : 0 40px 0 10px; //上右下左
-          color   : #434a54;
-        &__image {
-          font-size : 1.3rem;
-          cursor    : pointer ;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-
-          &__file {
-            text-decoration: none;
-            display: none;
-          }
-          }
+      position: relative;
+      &__text{
+        height  : 50px;
+        width   : 100%;
+        padding : 0 40px 0 10px; //上右下左
+        color   : #434a54;
+        border-style: none;
+      }
+      &__image {
+        font-size : 1.3rem;
+        cursor : pointer;
+        position: absolute;
+        top: 10px;
+        right: 120px;
+        &__file {
+          display: none;
         }
       }
-      &__submit-btn {
-          height           : 50px;
-          width            : 100px;
-          color            : white;
-          padding          : 0 30px;
-          margin-left      : 15px;
-          background-color : #38aef0;
-          cursor           : pointer;
-      }
+    }
+    .submit-btn {
+      height : 50px;
+      width : 100px;
+      color : white;
+      padding : 0 30px;
+      margin-left : 15px;
+      background-color : #38aef0;
+      cursor : pointer;
     }
   }
+    // &__input-form {
+    //   display: flex;
+    //   padding : 20px 40px;
+    //   &__input-box {
+    //     width: 100%;
+    //     display: flex;
+    //     position: relative;
+    //     &__text {
+    //       height : 50px;
+    //       width : 100%;
+    //       padding : 0 40px 0 10px; //上右下左
+    //       color : #434a54;
+    //       &__image {
+    //         font-size : 1.3rem;
+    //         cursor : pointer ;
+    //         position: absolute;
+    //         top: 10px;
+    //         right: 10px;
+    //         &__file {
+    //         text-decoration: none;
+    //         display: none;
+    //         }
+    //       }
+        // }
+      // }
+  //   }
+  //   &__submit-btn {
+  //   height : 50px;
+  //   width : 100px;
+  //   color : white;
+  //   padding : 0 30px;
+  //   margin-left : 15px;
+  //   background-color : #38aef0;
+  //   cursor : pointer;
+  //   }
+  // }
 }
