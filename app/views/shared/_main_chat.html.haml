@@ -1,13 +1,8 @@
 .chat-main
-  .chat-main__group-info
-    .chat-main__group-info__left-box
-      .chat-main__group-info__left-box__name
-        test group1
-      .chat-main__group-info__left-box__member
-        Member :
-    .chat-main__group-info__edit
-      = link_to 'Edit', "#", class: "chat-main__group-info__edit__edit-btn"
 
+  .main-header
+    = render partial: 'messages/main-header', locals: { messages: @messages }
+ 
   .messages
     = render @messages
 
