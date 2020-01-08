@@ -40,17 +40,20 @@
       }
     }
   }
-  &__messages{
+  .messages{
     height : calc(100% - 190px);
     width  : 100%;
-    &__message {
-      padding : 46px 0 0 40px; //上右下左
-      &__upper-info {
+    padding : 46px 40px; //上右下左
+    background-color: #fafafa;
+    .message {
+      margin: 0;
+      padding: 0;
+      .upper-info {
         display : flex;
         &__talker {
           font-size     : 16px;
           font-weight   : bold;
-          color         : #333333;
+          color         : #434a54;
           margin-bottom : 10px;
         }
         &__post-time {
@@ -60,13 +63,17 @@
           color       : #999999;
         }
       }
-      &__post-message {
+      .post-message {
+        margin-top: 10px;
+        &__content {
         color         : #434a54;
         font-size     : 14px;
-        margin-bottom : 10px;
+        margin-bottom : 40px;
+        }
       }
     }
   }
+
   .form {
     width: 100%;
     background-color : #ddd;
