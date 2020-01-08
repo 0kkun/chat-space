@@ -1,7 +1,7 @@
 .chat-main
 
   .main-header
-    = render partial: 'messages/main-header', locals: { messages: @messages }
+    = render partial: 'messages/main-header', locals: { group: @group }
  
   .messages
     = render @messages

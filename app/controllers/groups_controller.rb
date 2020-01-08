@@ -34,12 +34,13 @@ class GroupsController < ApplicationController
   #通知メッセを表示する。失敗したら再度editビューを表示する。
   def update
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+      redirect_to group_messages_path(@group), notice: 'グループを更新しました'
     else
       render :edit
     end
   end
 
+  #無くても良い
   def edit
     @group = Group.find(params[:id])
   end

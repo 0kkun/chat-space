@@ -1,8 +1,9 @@
 .main-header__left-box
   .main-header__left-box__name
-    -# = message.user.name
-    test group1
+    = group.name
   .main-header__left-box__member
-    Member : test
+    Member : 
+    - @group.users.each do |member|
+      = member.name
 .main-header__edit
-  = link_to 'Edit', "#", class: "main-header__edit__edit-btn"
+  = link_to "Edit", edit_group_path(group), class: 'main-header__edit__edit-btn'
