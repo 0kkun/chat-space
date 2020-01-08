@@ -9,7 +9,7 @@
       = link_to 'Edit', "#", class: "chat-main__group-info__edit__edit-btn"
 
   .messages
-    = render @messages #なぜかカリキュラムの通りでは呼べなかった eachで記述
+    = render @messages
 
   .form
     = form_for [@group, @message] do |f|
