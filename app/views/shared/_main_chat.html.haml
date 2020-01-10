@@ -7,10 +7,9 @@
     = render @messages
 
   .form
-    = form_for [@group, @message] do |f|
-      .input-form
-        = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
-        = f.label :image, class: 'input-form__image' do
-          = icon('fas', 'image')
-          = f.file_field :image, class: 'input-form__image__file'
-        = f.submit 'Send', class: 'submit-btn'
+    = form_for [@group, @message], html: { class: 'input-form' } do |f|
+      = f.text_field :content, class: 'input-form__text', placeholder: 'type a message'
+      = f.label :image, class: 'input-form__image' do
+        = icon('fas', 'image')
+        = f.file_field :image, class: 'input-form__image__file'
+      = f.submit 'Send', class: 'submit-btn'
