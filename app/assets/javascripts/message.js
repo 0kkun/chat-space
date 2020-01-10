@@ -55,6 +55,8 @@ $(function() {
     // var message = $('.input-form__text').val(); //チェック用
     // console.log(message); //チェック用 中身確認用コンソール
 
+    $('.submit-btn').removeAttr('data-disable-with');
+
     var formData = new FormData(this); // form要素の中身を取得
 
     // URLパスはフォーム要素のaction属性に格納されている
@@ -80,5 +82,6 @@ $(function() {
     .fail(function() {
       alert("メッセージ送信に失敗しました");
     });
+    return false;
   });
 });
