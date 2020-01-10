@@ -6,16 +6,16 @@ $(function() {
     if ( message.image ) {
       var html =
        `<div class="message" data-message-id=${message.id}>
-          <div class="upper-message">
-            <div class="upper-message__user-name">
+          <div class="upper-info">
+            <div class="upper-info__talker">
               ${message.user_name}
             </div>
-            <div class="upper-message__date">
+            <div class="upper-info__post-time">
               ${message.created_at}
             </div>
           </div>
-          <div class="lower-message">
-            <p class="lower-message__content">
+          <div class="post-message">
+            <p class="post-message__content">
               ${message.content}
             </p>
           </div>
@@ -27,16 +27,16 @@ $(function() {
     } else {
       var html =
        `<div class="message" data-message-id=${message.id}>
-          <div class="upper-message">
-            <div class="upper-message__user-name">
+          <div class="upper-info">
+            <div class="upper-info__talker">
               ${message.user_name}
             </div>
-            <div class="upper-message__date">
+            <div class="upper-info__post-time">
               ${message.created_at}
             </div>
           </div>
-          <div class="lower-message">
-            <p class="lower-message__content">
+          <div class="post-message">
+            <p class="post-message__content">
               ${message.content}
             </p>
           </div>
@@ -73,8 +73,9 @@ $(function() {
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html); //htmlのmessagesクラスに、生成したhtmlを下に追加する。
+      // メッセージをスクロールできるようにし、投稿されたら最新のメッセが表示されるところまでスクロールする
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset(); // フォームの中身をリセットする
     })
-
   });
 });
