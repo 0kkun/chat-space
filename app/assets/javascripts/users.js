@@ -22,6 +22,21 @@ $(function() {
     $("#user-search-result").append(html);
   }
 
+  // ユーザー削除ボタンをクリックしたら発火するhtml
+  function addDeleteUser(name, id) {
+    let html = `
+    <div class="chat-group-user clearfix" id="${id}">
+      <p class="chat-group-user__name">${name}</p>
+      <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
+    </div>`;
+    $(".js-add-user").append(html);
+  }
+  // ユーザー追加ボタンをクリックしたら発火するhtml
+  function addMember(userId) {
+    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
+    $(`#${userId}`).append(html);
+  }
+
   // --------------------------実際の処理------------------------------------
 
   //user-search-fieldにユーザーが何か入力したら発火
@@ -64,5 +79,27 @@ $(function() {
         // console.log("失敗です");
         alert("通信エラーです。ユーザーが表示できません。");
       });
+  });
+  //------------------------追加削除ボタンで発火するjs--------------------------
+  // $(document).onすることで常に最新のHTMLの情報を取得することができる
+  // Ajax通信で作成されたHTMLの情報を取得している
+  $(document).on("click", ".chat-group-user__btn--add", function() {
+    console.log
+    // 追加ボタンの対象であるユーザー情報を変数へ代入し、HTMLを描画
+    const userName = $(this).attr("data-user-name");
+    const userId = $(this).attr("data-user-id");
+    $(this)
+      .parent()
+      .remove();
+    addDeleteUser(userName, userId);
+    // ユーザーの追加や削除の情報は addMemberメソッドを作成してコントロール
+    // メンバーを追加する際に情報をuser_idsへ追加できるような仕組みを作り、
+    // 削除ボタンを押すと同時にその情報も削除
+    addMember(userId);
+  });
+  $(document).on("click", ".chat-group-user__btn--remove", function() {
+    $(this)
+      .parent()
+      .remove();
   });
 });
