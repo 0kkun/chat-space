@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'groups#index'
 
   #登録情報を編集するためのルーティングを定義
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:index, :edit, :update]
   
   #グループが存在しないとメッセージの投稿ができないようにするために、
   #メッセージをグループの下にネスト(入れ子化)している。

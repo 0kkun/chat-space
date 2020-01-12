@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  # インクリメンタルサーチ実装。
+  # 新規グループ作成画面で、文字が入力される度にjbuilderが呼ばれるように設定する
+  # views >> users >> index.json.jbuilderが呼ばれる
+  def index
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   #ルーティングで定義したresources :editに対応するアクション
   def edit
   end
