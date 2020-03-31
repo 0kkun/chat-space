@@ -1,18 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# About this application
+### 名称
+- Chat space
 
-Things you may want to cover:
+### 概要
+- メンバーを指定してグループを作成し、コメント及び画像を投稿してチャットをすることができる
 
-* Ruby version
+### 本番環境
+- デプロイ先：AWS
+- http://3.114.127.24/
+- ID : test@gmail.com / PASS : 11111111
 
-* System dependencies
+### 制作背景(意図)
+- Tech::Expertのカリキュラムで、Ruby on Railsを使ったアプリケーション開発を練習するため
 
-* Configuration
+### 使用技術
+- Ruby on Rails 5.2.4.1
+- ruby 2.5.1p57
+- MySQL 5.6.46 Homebrew
+- jQuery
+- AWS
+- haml
+- sass
 
-+------------------------------------------------------
-* Database creation
+## DB設計
 
 ## usersテーブル
 |Column|Type|Options|
@@ -54,14 +66,3 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-------------------------------------------------------
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

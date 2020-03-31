@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 
-
-
 describe MessagesController do
 
   # 複数のexampleで同一のインスタンスを使いたい場合、letメソッドを利用
